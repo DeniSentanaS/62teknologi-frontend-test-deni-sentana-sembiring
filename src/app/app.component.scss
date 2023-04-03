@@ -1,0 +1,30 @@
+.mat-toolbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #2196F3; //rgba(75, 192, 192, 1); // #1b1b1b;#039be5;#1976d2;#036068 #2f2f2f
+    color: white;
+    font-weight: 600;
+    justify-content: space-between;
+  }
+
+  .mat-sidenav-container {
+    height: calc(100vh - 55px);
+    .mat-sidenav-content {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  mat-sidenav {
+    width: 295px;
+  }
+  
+  mat-nav-list {
+    padding-top: 0;
+    margin-left: 0;
+  }

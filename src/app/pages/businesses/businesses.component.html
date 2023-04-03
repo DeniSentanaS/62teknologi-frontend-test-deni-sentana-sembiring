@@ -1,0 +1,44 @@
+<div class="container sticky search-theme">
+  <div class="row">
+    <button mat-mini-fab (click)="openForm('Add',{})" style="margin-right: 10px;"><mat-icon>add</mat-icon></button>
+    <div class="search-box content-flex">
+      <input matInput placeholder="search" autocomplete="off" [(ngModel)]="searchKey" (keyup)="keyUpFilter($event)"/>
+    </div>
+    <button mat-icon-button matTooltip="Refresh Data" matTooltipClass="tooltip">
+      <mat-icon color="primary">refresh</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="global-table-container mat-elevation-z0">
+  <div class="table-loading" *ngIf="isLoadingResults || isRateLimitReached">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="container">
+    <div class="container-flex">
+      <mat-card class="mat-elevation-z2" *ngFor="let businessList of business | paginate:{itemsPerPage: itemPerpage, currentPage: p}">
+        <mat-card-header>
+          <mat-card-title style="font-size: 14px; margin-bottom: 10px">{{businessList.name}}</mat-card-title>
+        </mat-card-header>
+        <img src="{{businessList.imageUrl}}" style="margin-left: 15px; margin-right: 15px; height: 240px;">
+        <mat-card-content>
+          <div class="row" style="margin-top: 10px">
+            <ngx-stars [readonly]="true" [size]="1" [maxStars]="5" [color]="'#efc43b'" [initialStars]="businessList.rating"></ngx-stars>
+            <p>{{ratingDisplay}}</p>
+            <span style="margin-left: 3px; margin-right: 3px;">{{businessList.rating}}</span>
+            <p>|</p>
+            <span style="margin-left: 3px;">{{businessList.reviewCount}} Views</span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button (click)="openForm('Update',{})">Update</button>
+          <button mat-button>Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="ngx-pagination">
+      <pagination-controls (pageChange)="p * $event"></pagination-controls>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <mat-icon color="primary" style="padding-bottom: 5px;">info</mat-icon>
+    <p style="margin-top: 3px;">Confirmation...</p>
+    <span style="flex: 1 1 auto"></span>
+    <div class="button-close" align="end">
+      <button mat-raised-button class="close" color="warn" aria-label="close" matTooltip="Close"
+              matTooltipClass="tooltip" (click)="closeConfirm()">
+      </button>
+    </div>
+  </div>
+  <mat-divider class="divider-form"></mat-divider>
+  <div mat-dialog-content>
+    <span>{{ data.message }}</span>
+  </div>
+
+  <div mat-dialog-actions align="end" style="padding-top: 35px;">
+    <button id="yes" mat-raised-button [mat-dialog-close]="true">Yes</button>
+    <button id="no" mat-raised-button [mat-dialog-close]="false" style="margin-right: 0">
+      No
+    </button>
+  </div>
+</div>

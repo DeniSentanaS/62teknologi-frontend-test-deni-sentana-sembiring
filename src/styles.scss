@@ -1,0 +1,104 @@
+@use '@angular/material' as mat;
+@use 'themes/palette' as plt;
+@import 'ngx-toastr/toastr';
+
+@include mat.core();
+$web-primary: mat.define-palette(plt.$blue-palette);
+$web-accent: mat.define-palette(plt.$light-blue-palette, A200, A100, A400);
+$web-warn: mat.define-palette(plt.$red-palette);
+$web-theme: mat.define-dark-theme((
+  color: (
+    primary: $web-primary,
+    accent: $web-accent,
+    warn: $web-warn,
+  )
+));
+@include mat.all-component-themes($web-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container {
+  margin: 10px;
+}
+
+.container-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 10px;
+}
+
+p, h1, h2, h3, h4, h5 {
+  margin: 0px;
+}
+
+.search-theme {
+  height: 55px;
+  margin-bottom: 0px;
+  background-color: #303030;
+  padding-top: 8px;
+}
+
+.search-box {
+  border: 1px solid #2196F3;
+  border-radius: 15px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: grey;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center;
+}
+
+.global-table-container {
+  position: relative;
+}
+
+.table-rate-limit-reached {
+  max-width: 360px;
+  text-align: center;
+}
+
+.table-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.form-header {
+  margin-bottom: 10px;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row form-header">
+    <span>Form {{ actions }}</span>
+    <span style="flex: 1 1 auto"></span>
+    <div class="button-close" align="end">
+      <button mat-raised-button class="close" color="warn" aria-label="close"
+              matTooltip="Close" matTooltipClass="tooltip" (click)="closeDialog()">
+      </button>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <input type="hidden" formControlName="id" name="id">
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Alias</mat-label>
+            <input matInput type="text" placeholder="type here..." autocomplete="off" name="alias"
+                   formControlName="alias"
+                   [(ngModel)]="objData.alias"/>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="type here..." autocomplete="off" name="name"
+                   formControlName="name"
+                   [(ngModel)]="objData.name"/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Image Url</mat-label>
+            <textarea style="height: 64px" matInput placeholder="type here..." name="imageUrl" autocomplete="off"
+                      formControlName="imageUrl"
+                      [(ngModel)]="objData.imageUrl">
+        </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Url</mat-label>
+            <textarea style="height: 64px" matInput placeholder="type here..." name="url" autocomplete="off"
+                      formControlName="url"
+                      [(ngModel)]="objData.url">
+        </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Review Count</mat-label>
+            <input matInput type="number" placeholder="type here..." autocomplete="off" name="reviewCount"
+                   formControlName="reviewCount"
+                   [(ngModel)]="objData.reviewCount"/>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Rating</mat-label>
+            <input matInput type="number" placeholder="type here..." autocomplete="off" name="rating"
+                   formControlName="rating"
+                   [(ngModel)]="objData.rating"/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+
+      </div>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+    </form>
+  </div>
+  <!--  {{form.value | json}}-->
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button (click)="onSubmit()">{{ actions }}</button>
+  </div>
+</div>

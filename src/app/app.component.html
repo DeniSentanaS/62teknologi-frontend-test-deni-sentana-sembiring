@@ -1,0 +1,15 @@
+
+<mat-toolbar>
+    <span>Toolbar</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #menuDrawer mode="side" opened="true">
+    <mat-nav-list>
+      <app-nav-menu *ngFor="let items of navigationItems" [item]="items"></app-nav-menu>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-container>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+</mat-sidenav-container>

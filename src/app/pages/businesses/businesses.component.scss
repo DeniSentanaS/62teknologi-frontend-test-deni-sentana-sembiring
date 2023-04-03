@@ -1,0 +1,25 @@
+.avatar-image {
+  background-size: cover;
+}
+
+::ng-deep {
+  .ngx-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ngx-pagination li {
+    //width: 25px !important;
+    height: 23px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    &.small-screen {
+      display: none !important;
+    }
+
+  }
+}

@@ -1,0 +1,17 @@
+a {
+    padding-left: 14px;
+  }
+  .menu {
+    display: flex;
+    color: #9a9393;
+    align-items: center;
+    flex-direction: row;
+    outline: none;
+    top: 0;
+  }
+  
+  .menu .icon {
+    padding-left: 0px;
+    padding-right: 10px;
+    font-size: 22px;
+  }
