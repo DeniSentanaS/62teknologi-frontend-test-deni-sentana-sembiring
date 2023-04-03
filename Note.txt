@@ -1,0 +1,5 @@
+the frontend project using angular framework with angular-cli version v15.2.2 and node version v16.19.1
+1. install node version 16.19.1
+2. install angular-cli by run command: npm install -g @angular/cli@15.2.2
+3. open folder root 62teknologi-frontend-test-deni-sentana-sembiring in command prompt and run command: npm install
+4. run: ng s
